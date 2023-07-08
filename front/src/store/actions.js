@@ -1,0 +1,1 @@
+export const cat = (payload) => ({type: 'ADD_CATEGORIES', payload})
