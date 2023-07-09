@@ -3,11 +3,11 @@ import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 
 import styles from "./Sidebar.module.css";
-import { fetchCategoriesData, } from '../../store/asyncAction/asyncCustemer';
+import { fetchCategoriesData, } from '../../store/asyncAction/asyncProducts';
 
 const Sidebar = () => {
   const dispatch = useDispatch();
-  const data = useSelector( state => state.categories.categories)
+  const data = useSelector( state => state.categories.categories);
 
 React.useEffect(() => {
   dispatch(fetchCategoriesData())

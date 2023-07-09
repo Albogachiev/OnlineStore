@@ -4,6 +4,8 @@ import { AppRoutes } from '../Routes';
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 import Footer from '../Footer/Footer';
+import Home from '../Home/Home';
+
 
 export default function App() {
   
@@ -12,6 +14,7 @@ export default function App() {
       <Header />
       <div className='container'> 
       <Sidebar />
+      <Home />
       <AppRoutes />
       </div>
       <Footer />

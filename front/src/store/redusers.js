@@ -8,7 +8,16 @@ const initCategories = []
                             return state;
         }
     }
+const productsRedux = (state = [], action) =>{
+    switch (action.type) {
+        case 'GET_PRODUCTS' : 
+        return {...state.products, products:[...state, ...action.payload]}
+        default:
+            return state;
+    }
+}
 
     export {
         categoriesRedux,
+        productsRedux
     }
