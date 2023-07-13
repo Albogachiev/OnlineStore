@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './Products.module.css'
 
 export const Products = ({products=[],style={},amount,title}) => {
-    const list = products.filter((_, i) => i < amount)
+    const list = products.products.filter((_, i) => i < amount)
     // console.log(list)
   return (
     <section className={styles.products} style={style}>
@@ -14,7 +14,7 @@ export const Products = ({products=[],style={},amount,title}) => {
         <Link to={`/products/${id}`} key={id} className={styles.product}>
           <div
             className={styles.image}
-            style={{ backgroundImage: `url(${images[0]})` }}
+            style={{ backgroundImage: `url(${'#'})` }}
           />
 
           <div className={styles.wrapper}>

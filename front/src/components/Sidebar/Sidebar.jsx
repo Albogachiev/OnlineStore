@@ -3,22 +3,25 @@ import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 
 import styles from "./Sidebar.module.css";
-import { fetchCategoriesData, } from '../../store/asyncAction/asyncProducts';
+import {categories, products} from '../../store/actions';
 
 const Sidebar = () => {
-  const dispatch = useDispatch();
-  const data = useSelector( state => state.categories.categories);
+const dispatch = useDispatch();
 
-React.useEffect(() => {
-  dispatch(fetchCategoriesData())
+React.useEffect(() =>{
+  dispatch(categories())
+  dispatch(products())
 },[])
+
+const state = useSelector(state => state.cat.categories)
+const data = state.filter((_, i) => i < 9)
 
   return (
     <section className={styles.sidebar}>
       <div className={styles.title}>CATEGORIES</div>
       <nav>
         <ul className={styles.menu}>
-          {data && data.map(({id, name}) => 
+          {data?.map(({id, name}) => 
             <li key={id}>
               <NavLink
               className={({isActive}) => `${styles.link} ${isActive ? styles.active : ''}`}

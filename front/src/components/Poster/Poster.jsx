@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Poster.module.css';
 
 
-export default function Poster() {
+export function Poster() {
   return (
     <section className={styles.home}>
     <div className={styles.title}>BIG SALE 20%</div>
@@ -18,4 +18,4 @@ export default function Poster() {
     </div>
   </section>
   )
-}
+};

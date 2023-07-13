@@ -2,14 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./Footer.module.css";
-import { ROUTES } from "../../utils/routes";
 
  
 
 const Footer = () => (
   <section className={styles.footer}>
     <div className={styles.logo}>
-      <Link to={ROUTES.HOME}>
+      <Link to={'/'}>
         <img src='./images/userIcon.svg' alt="Stuff" />
       </Link>
     </div>

@@ -1,13 +1,12 @@
 import React from 'react';
 import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
-import {ROUTES} from '../../utils/routes'
 
 const Header = () => {
   return (
     <div className={styles.header}>
       <div className={styles.logo}>
-        <Link to={ROUTES.HOME}>
+        <Link to={'/'}>
           <img className={styles.logotip} src='./images/logoPremium.jpg' alt='логотип'></img>
         </Link>
       </div>
@@ -35,13 +34,13 @@ const Header = () => {
             { false && <div className={styles.box}></div>}
           </form>
           <div className={styles.account}>
-            <Link to={ROUTES.HOME} className={styles.favourites}>
+            <Link to={'/'} className={styles.favourites}>
             <svg className={styles["icon-fav"]}>
               <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#heart`} />
             </svg>
             </Link>
 
-            <Link to={ROUTES.CART} className={styles.cart}>
+            <Link to={'/cart'} className={styles.cart}>
             <svg className={styles["icon-cart"]}>
               <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#bag`} />
             </svg>

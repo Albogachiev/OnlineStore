@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import styles from './Categories.module.css';
 
 
-const Categories = ({ title, products = [], amount }) => {
-    const list = products.filter((_, i) => i < amount);
+export const Categories = ({ title, products = [], amount }) => {
+    const list = products.categories.filter((_, i) => i < amount);
+    // console.log(products.categories)
   
     return (
       <section className={styles.section}>
@@ -15,7 +16,7 @@ const Categories = ({ title, products = [], amount }) => {
             <Link to={`/categories/${id}`} key={id} className={styles.item}>
               <div
                 className={styles.image}
-                style={{ backgroundImage: `url(${image})` }}
+                style={{ backgroundImage: `url(${'#'})` }}
               />
               <h3 className={styles.title}>{name}</h3>
             </Link>
@@ -24,5 +25,3 @@ const Categories = ({ title, products = [], amount }) => {
       </section>
     );
   };
-  
-  export default Categories;
