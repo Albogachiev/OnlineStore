@@ -5,16 +5,18 @@ import {Poster} from '../Poster/Poster';
 import { Products } from '../Products/Products';
 import {Categories} from '../Categories/Categories';
 import {Banner} from '../Banner/Banner';
-import {products, categories} from '../../store/actions';
+import {products, categories, filtPrice} from '../../store/actions';
 
 export default function Home() {
     const dispatch = useDispatch();
+    
     React.useEffect(() => {
-      dispatch(products)
-      dispatch(categories)
+      dispatch(products())
+      dispatch(categories())
+      dispatch(filtPrice(100))
     }, [])
+
     const data = useSelector((state) => state)
-    // console.log('>>><', data)
     
   return (
     <>

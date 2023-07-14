@@ -5,7 +5,6 @@ import styles from './Categories.module.css';
 
 export const Categories = ({ title, products = [], amount }) => {
     const list = products.categories.filter((_, i) => i < amount);
-    // console.log(products.categories)
   
     return (
       <section className={styles.section}>

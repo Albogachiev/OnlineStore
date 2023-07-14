@@ -1,17 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import styles from "./Sidebar.module.css";
-import {categories, products} from '../../store/actions';
 
 const Sidebar = () => {
-const dispatch = useDispatch();
-
-React.useEffect(() =>{
-  dispatch(categories())
-  dispatch(products())
-},[])
 
 const state = useSelector(state => state.cat.categories)
 const data = state.filter((_, i) => i < 9)
