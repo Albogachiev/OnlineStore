@@ -9,13 +9,13 @@ import {products, categories, filtPrice} from '../../store/actions';
 
 export default function Home() {
     const dispatch = useDispatch();
-    
     React.useEffect(() => {
       dispatch(products())
       dispatch(categories())
+      if(!products().length)return;
       dispatch(filtPrice(100))
     }, [])
-
+    
     const data = useSelector((state) => state)
     
   return (
@@ -23,7 +23,7 @@ export default function Home() {
     <Poster />
     <Products products={data.pro} amount={5} title={'Treding'} />
     <Categories products={data.cat} amount={5} title={'Worth seeing'} />
-    <Banner products={data.pro} amount={5} title={'Worth seeing'} />
+    <Banner products={data.pro} amount={5} title={'Less than 100$'} />
     </>
   )
 }

@@ -1,6 +1,7 @@
 const cat = (value) => ({type: 'GET_CATEGORIES', payload:{value}});
 const prod = (value) => ({type: 'GET_PRODUCTS', payload:{value}});
-const filPro = (value) => ({type: 'FILTERED_PRODUCTS', payload:{value}})
+const filPro = (value) => ({type: 'FILTERED_PRODUCTS', payload:{value}});
+const prodData = (value) => ({type: 'GET_PRODUCT_DATA', payload:{value}});
 
 
 export const categories = ( ) => {
@@ -27,3 +28,11 @@ export const filtPrice = (sum) => {
         .then((el) =>  dispatch(filPro(el)))
     }
 };
+
+export const productsId = (id) => {
+    return (dispatch) => {
+        fetch(`https://api.escuelajs.co/api/v1/products/${id}`)
+        .then(res => res.json())
+        .then(el => dispatch(prodData(el)))
+    }
+}

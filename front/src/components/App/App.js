@@ -12,10 +12,9 @@ export default function App() {
   return (
     <div className='app'>
       <Header />
-      <div className='container'> 
+      <div className='container'>
       <Sidebar />
-      <Home />
-      <AppRoutes />
+      < AppRoutes />
       </div>
       <Footer />
     </div>
